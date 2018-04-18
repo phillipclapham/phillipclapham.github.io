@@ -1,6 +1,12 @@
 @keyframes scroll {
-  from { left: -10% }
-  to { left: 110% }
+  from { left: -10%; }
+  to { left: 110%; }
+}
+
+@keyframes blink {
+  0% { opacity: 1.0; }
+  50% { opacity: 0; }
+  100% { opacity: 1.0; }
 }
 
 * {
@@ -177,6 +183,15 @@ section p {
   width: 100%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.scanning {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 1.0;
+  animation: blink 3s linear infinite;
 }
 
 footer {
