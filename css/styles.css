@@ -195,7 +195,11 @@ section p {
   animation: blink 3s linear infinite;
 }
 
-.scanText {
+.scanText1 {
+  font-size: 1.75rem;
+}
+
+.scanText2 {
   font-size: 1.5rem;
 }
 
@@ -223,6 +227,14 @@ footer p {
 
   section p {
     font-size: 2rem;
+  }
+
+  .scanText1 {
+    font-size: 1.25rem;
+  }
+  
+  .scanText2 {
+    font-size: 1rem;
   }
 
   footer {
