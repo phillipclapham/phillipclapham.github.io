@@ -1,3 +1,23 @@
+@keyframes textFlicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    text-shadow: -1px -1px 0 rgba(255,0,0,0.1),
+                 1px -1px 0 rgba(255,0,0,0.1),
+                 -1px 1px 0 rgba(255,0,0,0.1),
+                 1px 1px 0 rgba(255,0,0,0.1),
+                 0 -2px 5px, 
+                 0 0 2px, 
+                 0 0 3px rgba(255, 126, 0, 0.5), 
+                 0 0 5px rgba(255, 68, 68, 0.5), 
+                 0 0 2px rgba(255, 126, 0, 0.5), 
+                 0 2px 3px #000;
+    opacity: .99;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    text-shadow: none;
+    opacity: 0.6;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -92,7 +112,7 @@ nav {
   background: #000;
   color: #fff;
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 nav ul {
@@ -104,6 +124,17 @@ nav ul li {
   list-style: none;
   display: inline-block;
   margin: 0 10px;
+  background: #fff;
+  padding: 5px 10px;
+  color: #000;
+  border-radius: 15px;
+  user-select: none;
+}
+
+nav ul li:hover {
+  background: #000;
+  color: #fff;
+  box-shadow: 2px 2px 5px rgba(255,0,0,0.7), -2px -2px 5px rgba(255,0,0,0.7);
 }
 
 .navRow, .footRow {
@@ -114,31 +145,76 @@ nav ul li {
   height: 80%;
 }
 
-header {
+.nameBox {
+  height: auto;
+}
+
+section {
   text-align: center;
 }
 
-header p {
+section p {
+  margin: 0;
   font-size: 2.5rem;
   font-weight: 900;
   opacity: 1.0;
+  animation: textFlicker 2.5s linear infinite;
 }
 
 footer {
+  font-size: 1.25rem;
   height: 10%;
   text-align: center;
   background: #000;
   color: #fff;
 }
 
+footer p {
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 650px) {
+  nav {
+    font-size: 1rem;
+  }
+
+  nav ul li {
+    margin: 0px;
+  }
+
+  section p {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: .9rem;
+  }
+}
+
 @media screen and (max-width: 420px) {
   nav {
+    font-size: .8rem;
+  }
+
+  section p {
+    font-size: 1.5rem;
+  }
+
+  footer {
     font-size: .75rem;
   }
 }
 
 @media screen and (max-width: 350px) {
   nav {
-    font-size: .6rem;
+    font-size: .7rem;
+  }
+
+  section p {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: .65rem;
   }
 }
