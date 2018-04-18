@@ -1,20 +1,23 @@
-@keyframes textFlicker {
+@keyframes flicker {
   0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    text-shadow: -1px -1px 0 rgba(255,0,0,0.1),
-                 1px -1px 0 rgba(255,0,0,0.1),
-                 -1px 1px 0 rgba(255,0,0,0.1),
-                 1px 1px 0 rgba(255,0,0,0.1),
-                 0 -2px 2px, 
-                 0 0 2px, 
-                 0 0 2px rgba(255, 126, 0, 0.5), 
-                 0 0 2px rgba(255, 68, 68, 0.5), 
-                 0 0 2px rgba(255, 126, 0, 0.5), 
-                 0 2px 2px #000;
-    opacity: .99;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.7),
+               -1px 1px 0 rgba(0,0,0,0.7),
+               1px -1px 0 rgba(0,0,0,0.7),
+               1px 1px 0 rgba(0,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7);
   }
   20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    text-shadow: none;
-    opacity: 0.6;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.7),
+               -1px 1px 0 rgba(0,0,0,0.7),
+               1px -1px 0 rgba(0,0,0,0.7),
+               1px 1px 0 rgba(0,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.1),
+               -2px -2px 2px rgba(255,0,0,0.1),
+               -2px -2px 2px rgba(255,0,0,0.1),
+               -2px -2px 2px rgba(255,0,0,0.1);
   }
 }
 
@@ -129,6 +132,7 @@ nav ul li {
   color: #000;
   border-radius: 15px;
   user-select: none;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 nav ul li:hover {
@@ -153,8 +157,15 @@ section p {
   margin: 0;
   font-size: 2.5rem;
   font-weight: 900;
-  opacity: 1.0;
-  animation: textFlicker 2.5s linear infinite;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.7),
+               -1px 1px 0 rgba(0,0,0,0.7),
+               1px -1px 0 rgba(0,0,0,0.7),
+               1px 1px 0 rgba(0,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7),
+               -2px -2px 2px rgba(255,0,0,0.7);
+  animation: flicker 3s linear infinite;
 }
 
 footer {
@@ -167,6 +178,7 @@ footer {
 
 footer p {
   margin: 0 10px;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
 }
 
 @media screen and (max-width: 650px) {
@@ -194,6 +206,11 @@ footer p {
 
   section p {
     font-size: 1.5rem;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.7),
+                 0px 0px 1px rgba(0,0,0,0.7),
+                 0px 0px 1px rgba(0,0,0,0.7),
+                 0px 0px 1px rgba(0,0,0,0.7);
+    animation: none;
   }
 
   footer {
