@@ -1,9 +1,9 @@
 // Initialize page
-let secRowID = document.getElementById('secRowID');
+const secRowID = document.getElementById('secRowID');
 
 // Page content variables
-let homePage = `<div class="scanBar">
-<svg class="svgBox">
+let homePageStart = `<div class="scanBar" id="scanBarID">
+<svg class="svgBox" id="svgBoxID1">
   <line x1="10%" y1="0" x2="10%" y2="50%" style="stroke:#000;stroke-width:1" />
   <line x1="20%" y1="0" x2="20%" y2="25%" style="stroke:#000;stroke-width:1" />
   <line x1="30%" y1="0" x2="30%" y2="37.5%" style="stroke:#000;stroke-width:1" />
@@ -25,22 +25,35 @@ let homePage = `<div class="scanBar">
   <line x1="55%" y1="77.5%" x2="100%" y2="77.5%" style="stroke:#000;stroke-width:1" />
 </svg>
 </div>
-<div class="crossBar">
-<svg class="svgBox">
+<div class="crossBar" id="crossBarID">
+<svg class="svgBox" id="svgBoxID2">
   <line x1="0" y1="50%" x2="100%" y2="50%" style="stroke:#000;stroke-width:2" />
 </svg>
 </div>
-<div class="scanning">
+<div class="scanning" id="scanningID">
   <p class="scanText1">STAND BY:</p>
-<p class="scanText2">Scan For Awesomeness In Progress</p>
+  <p class="scanText2">Scan For Awesomeness In Progress</p>
 </div>
-<div class="nameBox">
+<div class="nameBox" id="nameBoxID">
 <p>Phillip A. Clapham</p>
 <p>====================</p>
 <p>Software Developer</p>
 </div>`;
 
 // Display initial home page on site load
-secRowID.innerHTML = homePage;
+secRowID.innerHTML = homePageStart;
 
 // After 15 seconds, transition home page to next animation
+const firstPageJump = setTimeout(() => {
+  const scanBarID = document.getElementById('scanBarID');
+  const svgBoxID1 = document.getElementById('svgBoxID1');
+  const svgBoxID2 = document.getElementById('svgBoxID2');
+  const crossBarID = document.getElementById('crossBarID');
+  const scanningID = document.getElementById('scanningID');
+  const nameBoxID = document.getElementById('nameBoxID');
+  
+  // Fade all but nameBox, move up NameBox, and move on with initial animation
+  // const firstFade = setInterval(() => {
+    
+  // }, 50);
+}, 5000);
