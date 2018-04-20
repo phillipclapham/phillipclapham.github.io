@@ -42,3 +42,24 @@ let homePageStart = `<div class="scanBar" id="scanBarID">
 
 // Display initial home page on site load
 secRowID.innerHTML = homePageStart;
+
+// Initial home page animation #1
+const scanBarID = document.getElementById('scanBarID');
+
+setTimeout(()=> {
+
+  // Fade out scanbar and set display to none
+  scanBarID.style.opacity = "0.2";
+  scanBarID.style.animation = "scroll 5s linear infinite";
+  let sbOpac = 2;
+  const animOne = setInterval(() => {
+    if (sbOpac > 0) {
+      sbOpac--;
+      scanBarID.style.opacity = `0.${sbOpac}`;
+    } else {
+      scanBarID.style.display = "none";
+      clearInterval(animOne);
+    }
+  }, 1000);
+    
+}, 5000);
