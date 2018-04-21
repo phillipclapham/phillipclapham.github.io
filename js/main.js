@@ -2,7 +2,7 @@
 const secRowID = document.getElementById('secRowID');
 
 // Page content variables
-let homePageStart = `<div class="scanBar" id="scanBarID">
+const homePageStart = `<div class="scanBar" id="scanBarID">
 <svg class="svgBox">
   <line x1="50%" y1="0" x2="50%" y2="100%" style="stroke:#000;stroke-width:2" />
 </svg>
@@ -66,4 +66,4 @@ const completePerc = setInterval(() => {
     scanComplete();
     clearInterval(completePerc);
   }
-}, 100);
+}, 50);
