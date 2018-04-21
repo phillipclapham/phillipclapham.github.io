@@ -15,6 +15,11 @@
   100% { opacity: 0.7; }
 }
 
+@keyframes scanAlert {
+  from { color: #000; }
+  to { color: #f00; }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -207,6 +212,19 @@ section p {
 
 .scanText2 {
   font-size: 1.5rem;
+}
+
+.scanComplete {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0.0;
+}
+
+.scanBlink {
+  animation: scanAlert 1s linear infinite;
 }
 
 footer {

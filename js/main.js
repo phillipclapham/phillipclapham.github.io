@@ -25,7 +25,7 @@ let homePageStart = `<div class="scanBar" id="scanBarID">
   <line x1="55%" y1="77.5%" x2="100%" y2="77.5%" style="stroke:#000;stroke-width:1" />
 </svg>
 </div>
-<div class="crossBar">
+<div class="crossBar" id="crossBarID">
 <svg class="svgBox">
   <line x1="0" y1="50%" x2="100%" y2="50%" style="stroke:#000;stroke-width:2" />
 </svg>
@@ -38,28 +38,78 @@ let homePageStart = `<div class="scanBar" id="scanBarID">
 <p>Phillip A. Clapham</p>
 <p>====================</p>
 <p>Software Developer</p>
+</div>
+<div class="scanComplete" id="scanCompleteID">
+  <p class="scanText1 scanBlink">ATTENTION:</p>
+  <p class="scanText2 scanBlink">AWESOMENESS FOUND</p>
+  <br><br>
+  <p class="scanText1">LOCATION:</p>
+  <p class="scanText2">Currently connected client</p>
+  <br><br>
+  <p class="scanText1">RECOMMENDATION:</p>
+  <p class="scanText2">Reach out to Phill, he's awesome too!</p>
 </div>`;
 
 // Display initial home page on site load
 secRowID.innerHTML = homePageStart;
 
-// Initial home page animation #1
+// Initialize home page animation
 const scanBarID = document.getElementById('scanBarID');
+const crossBarID = document.getElementById('crossBarID');
+const scanningID = document.getElementById('scanningID');
+const nameBoxID = document.getElementById('nameBoxID');
+const scanCompleteID = document.getElementById('scanCompleteID');
 
 setTimeout(()=> {
+  // Move up namebox and crossbar
+  // scanBarID.style.display = "none";
+  let nameBoxPos = 50;
+  nameBoxID.style.top = `${nameBoxPos}%`;
+  crossBarID.style.top = `${nameBoxPos}%`;
 
-  // Fade out scanbar and set display to none
-  scanBarID.style.opacity = "0.2";
-  scanBarID.style.animation = "scroll 5s linear infinite";
-  let sbOpac = 2;
-  const animOne = setInterval(() => {
-    if (sbOpac > 0) {
-      sbOpac--;
-      scanBarID.style.opacity = `0.${sbOpac}`;
+  const animOneOne = setInterval(() => {
+    if (nameBoxPos > 15) {
+      nameBoxPos--;
+      nameBoxID.style.top = `${nameBoxPos}%`;
+      crossBarID.style.top = `${nameBoxPos}%`;
     } else {
-      scanBarID.style.display = "none";
-      clearInterval(animOne);
+      clearInterval(animOneOne);
     }
+  }, 30);
+
+  // Fade out scanning
+  let scanningOp = 7;
+  scanningID.style.opacity = `0.${scanningOp}`;
+  scanningID.style.animation = "none";
+
+  const animOneTwo = setInterval(() => {
+    if (scanningOp > 0) {
+      scanningOp--;
+      scanningID.style.opacity = `0.${scanningOp}`;
+    } else {
+      clearInterval(animOneTwo);
+      scanningID.style.display = "none";
+    }
+  }, 30);
+
+  // Fade In Awesomeness Found Box
+  setTimeout(() => {
+    let scOp = 0;
+    scanCompleteID.style.display = 'inline-block';
+    scanCompleteID.style.opacity = `0.${scOp}`;
+
+    const animOneThree = setInterval(() => {
+      if (scOp <= 9) {
+        scOp++;
+        if (scOp === 10) {
+          scanCompleteID.style.opacity = `1.0`;
+        } else {
+          scanCompleteID.style.opacity = `0.${scOp}`;
+        }
+      } else {
+        clearInterval(animOneThree);
+      }
+    }, 150);
   }, 1000);
     
 }, 5000);
