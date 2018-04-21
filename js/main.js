@@ -62,7 +62,6 @@ const scanCompleteID = document.getElementById('scanCompleteID');
 
 setTimeout(()=> {
   // Move up namebox and crossbar
-  // scanBarID.style.display = "none";
   let nameBoxPos = 50;
   nameBoxID.style.top = `${nameBoxPos}%`;
   crossBarID.style.top = `${nameBoxPos}%`;
