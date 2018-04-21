@@ -46,7 +46,7 @@ function scanComplete() {
   scanText2ID.style.animation = 'none';
   scanningID.innerHTML = `<p class="scanText1 scanResult1" id="scanText1ID">SCAN COMPLETE</p>
   <p class="scanText2 scanResult2" id="scanText2ID">RESULTS:<br>Current user is awesome.</p>
-  <p class="scanText2 scanResult2" id="scanText2ID">RECOMMENDATIONS:<br>Click the links above to find out more about me and check out my work.</p>`;
+  <p class="scanText2 scanResult2" id="scanText3ID">RECOMMENDATIONS:<br>Click the links above to find out more about me and check out my work.</p>`;
 }
 
 const scanningID = document.getElementById('scanningID');
