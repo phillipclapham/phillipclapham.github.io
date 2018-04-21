@@ -64,13 +64,12 @@ setTimeout(()=> {
   // Move up namebox and crossbar
   let nameBoxPos = 50;
   nameBoxID.style.top = `${nameBoxPos}%`;
-  crossBarID.style.top = `${nameBoxPos}%`;
+  crossBarID.style.opacity = '0.2';
 
   const animOneOne = setInterval(() => {
     if (nameBoxPos > 15) {
       nameBoxPos--;
       nameBoxID.style.top = `${nameBoxPos}%`;
-      crossBarID.style.top = `${nameBoxPos}%`;
     } else {
       clearInterval(animOneOne);
     }
@@ -94,7 +93,7 @@ setTimeout(()=> {
   // Fade In Awesomeness Found Box
   setTimeout(() => {
     let scOp = 0;
-    scanCompleteID.style.display = 'inline-block';
+    scanCompleteID.style.display = 'inline';
     scanCompleteID.style.opacity = `0.${scOp}`;
 
     const animOneThree = setInterval(() => {
