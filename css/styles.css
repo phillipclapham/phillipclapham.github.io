@@ -221,6 +221,10 @@ section p {
   top: 60%;
   transform: translateX(-50%) translateY(-50%);
   opacity: 0.0;
+  border: 2px solid #000;
+  padding: 10px 25px;
+  border-radius: 20px;
+  background: #fff;
 }
 
 .scanBlink {
