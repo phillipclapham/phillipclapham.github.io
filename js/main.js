@@ -1,30 +1,74 @@
 // Initialize page
-const secRowID = document.getElementById('secRowID');
+const navULID = document.getElementById('navULID');
+const hps1 = document.getElementById('hps1');
+const hps2 = document.getElementById('hps2');
+const hps3 = document.getElementById('hps3');
+const hps4 = document.getElementById('hps4');
 
-// Page content variables
-const homePageStart = `<div class="scanBar" id="scanBarID">
-<svg class="svgBox">
-  <line x1="50%" y1="0" x2="50%" y2="100%" style="stroke:#000;stroke-width:2" />
-</svg>
-</div>
-<div class="crossBar" id="crossBarID">
-<svg class="svgBox">
-  <line x1="0" y1="50%" x2="100%" y2="50%" style="stroke:#000;stroke-width:2" />
-</svg>
-</div>
-<div class="scanning" id="scanningID">
-  <p class="scanText1" id="scanText1ID">STAND BY:</p>
-  <p class="scanText2" id="scanText2ID">User Scan In Progress</p>
-  <p class="scanText2" id="scanText2ID">Complete: <span id="scanSpan">0</span>%</p>
-</div>
-<div class="nameBox" id="nameBoxID">
-<p>Phillip A. Clapham</p>
-<p>====================</p>
-<p>Software Developer</p>
-</div>`;
+// Nav Event Listener
+function homePageShift(e) {
+  if (e.target.id === 'navProfileID') {
 
-// Display initial home page on site load
-secRowID.innerHTML = homePageStart;
+    hps2.style.display = 'block';
+    let hps2Op = 0;
+    hps2.style.opacity = hps2Op;
+
+    const hpFadeIn = setInterval(() => {
+      if (hps2Op < 1) {
+        hps2Op = hps2Op + .01;
+        hps2.style.opacity = hps2Op;
+      } else {
+        clearInterval(hpFadeIn);
+      }
+    }, 10);
+  }
+
+  if (e.target.id === 'navExpID') {
+
+    hps3.style.display = 'block';
+    let hps3Op = 0;
+    hps3.style.opacity = hps3Op;
+
+    const hpFadeIn = setInterval(() => {
+      if (hps3Op < 1) {
+        hps3Op = hps3Op + .01;
+        hps3.style.opacity = hps3Op;
+      } else {
+        clearInterval(hpFadeIn);
+      }
+    }, 10);
+  }
+
+  if (e.target.id === 'navContactID') {
+
+    hps4.style.display = 'block';
+    let hps4Op = 0;
+    hps4.style.opacity = hps4Op;
+
+    const hpFadeIn = setInterval(() => {
+      if (hps4Op < 1) {
+        hps4Op = hps4Op + .01;
+        hps4.style.opacity = hps4Op;
+      } else {
+        clearInterval(hpFadeIn);
+      }
+    }, 10);
+  }
+}
+
+navULID.addEventListener('click', (e) => {
+  if (e.target !== e.currentTarget) {
+    hps1.style.display = 'none';
+    hps2.style.display = 'none';
+    hps3.style.display = 'none';
+    hps4.style.display = 'none';
+    homePageShift(e);
+  }
+  e.stopPropagation();
+});
+
+// Home Buttom Class Event Listeners
+// Next Up - Remeber to add hps5 div to index, set default style, will be home page return for link buttons
 
 // Scan animation
 function scanComplete() {
