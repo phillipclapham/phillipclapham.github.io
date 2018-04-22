@@ -282,10 +282,21 @@ footer p {
   color: #fff;
   padding: 5px 10px;
   border-radius: 20px;
+  user-select: none;
 }
 
 .homeB:hover {
   box-shadow: 2px 2px 5px rgba(255,0,0,0.7), -2px -2px 5px rgba(255,0,0,0.7);
+}
+
+.resumeList {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.5rem;
+}
+
+.resumeList li {
+  margin: 10px 0 10px;
 }
 
 /* Mobile Styles */
@@ -327,6 +338,10 @@ footer p {
 
   .resumeText h3 {
     font-size: 1.25rem;
+  }
+
+  .resumeList {
+    font-size: 1rem;
   }
 
 }

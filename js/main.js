@@ -4,6 +4,7 @@ const hps1 = document.getElementById('hps1');
 const hps2 = document.getElementById('hps2');
 const hps3 = document.getElementById('hps3');
 const hps4 = document.getElementById('hps4');
+const homeBArr = document.querySelectorAll('.homeB');
 
 // Nav Event Listener
 function homePageShift(e) {
@@ -68,7 +69,26 @@ navULID.addEventListener('click', (e) => {
 });
 
 // Home Buttom Class Event Listeners
-// Next Up - Remeber to add hps5 div to index, set default style, will be home page return for link buttons
+for (let i of homeBArr) {
+  i.addEventListener('click', (e) => {
+    hps2.style.display = 'none';
+    hps3.style.display = 'none';
+    hps4.style.display = 'none';
+
+    let hps1Op = 0;
+    hps1.style.opacity = hps1Op;
+    hps1.style.display = 'block';
+
+    const hpFadeIn = setInterval(() => {
+      if (hps1Op < 1) {
+        hps1Op = hps1Op + .01;
+        hps1.style.opacity = hps1Op;
+      } else {
+        clearInterval(hpFadeIn);
+      }
+    }, 10);
+  });
+}
 
 // Scan animation
 function scanComplete() {
