@@ -1,7 +1,3 @@
-// To-Do:
-// Toggle back to normal, fill out SV content and add red coloring, remaining buttons need SV state ifs,
-// Change footer text in sv mode
-
 // Initialize page
 let svState = false;
 const navULID = document.getElementById('navULID');
@@ -15,6 +11,17 @@ const hps7 = document.getElementById('hps7');
 const hps8 = document.getElementById('hps8');
 const homeBArr = document.querySelectorAll('.homeB');
 const svToggle = document.getElementById('svToggle');
+const navID = document.getElementById('navID');
+const footerID = document.getElementById('footerID');
+const scanningID = document.getElementById('scanningID');
+const scanText1ID = document.getElementById('scanText1ID');
+const scanText2ID = document.getElementById('scanText2ID');
+const scanSpan = document.getElementById('scanSpan');
+const nameBoxID = document.getElementById('nameBoxID');
+const crossBarID = document.getElementById('crossBarID');
+const nameBox2ID = document.getElementById('nameBox2ID');
+const footerText1 = document.getElementById('footerText1');
+const footerText2 = document.getElementById('footerText2');
 
 // Nav Event Listener
 function homePageShift(e) {
@@ -49,35 +56,63 @@ function homePageShift(e) {
   }
 
   if (e.target.id === 'navExpID') {
+    if (!svState) {
+      hps3.style.display = 'block';
+      let hps3Op = 0;
+      hps3.style.opacity = hps3Op;
 
-    hps3.style.display = 'block';
-    let hps3Op = 0;
-    hps3.style.opacity = hps3Op;
+      const hpFadeIn = setInterval(() => {
+        if (hps3Op < 1) {
+          hps3Op = hps3Op + .01;
+          hps3.style.opacity = hps3Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    } else {
+      hps7.style.display = 'block';
+      let hps7Op = 0;
+      hps7.style.opacity = hps7Op;
 
-    const hpFadeIn = setInterval(() => {
-      if (hps3Op < 1) {
-        hps3Op = hps3Op + .01;
-        hps3.style.opacity = hps3Op;
-      } else {
-        clearInterval(hpFadeIn);
-      }
-    }, 10);
+      const hpFadeIn = setInterval(() => {
+        if (hps7Op < 1) {
+          hps7Op = hps7Op + .01;
+          hps7.style.opacity = hps7Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    }
   }
 
   if (e.target.id === 'navContactID') {
+    if (!svState) {
+      hps4.style.display = 'block';
+      let hps4Op = 0;
+      hps3.style.opacity = hps4Op;
 
-    hps4.style.display = 'block';
-    let hps4Op = 0;
-    hps4.style.opacity = hps4Op;
+      const hpFadeIn = setInterval(() => {
+        if (hps4Op < 1) {
+          hps4Op = hps4Op + .01;
+          hps4.style.opacity = hps4Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    } else {
+      hps8.style.display = 'block';
+      let hps8Op = 0;
+      hps8.style.opacity = hps8Op;
 
-    const hpFadeIn = setInterval(() => {
-      if (hps4Op < 1) {
-        hps4Op = hps4Op + .01;
-        hps4.style.opacity = hps4Op;
-      } else {
-        clearInterval(hpFadeIn);
-      }
-    }, 10);
+      const hpFadeIn = setInterval(() => {
+        if (hps8Op < 1) {
+          hps8Op = hps8Op + .01;
+          hps8.style.opacity = hps8Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    }
   }
 }
 
@@ -161,13 +196,6 @@ function scanComplete() {
   <p class="scanText2 scanResult2" id="scanText3ID">RECOMMENDATIONS:<br>Click the links above to find out more about me and check out my work.</p>`;
 }
 
-const scanningID = document.getElementById('scanningID');
-const scanText1ID = document.getElementById('scanText1ID');
-const scanText2ID = document.getElementById('scanText2ID');
-const scanSpan = document.getElementById('scanSpan');
-const nameBoxID = document.getElementById('nameBoxID');
-const crossBarID = document.getElementById('crossBarID');
-
 let ssNum = 0;
 
 const completePerc = setInterval(() => {
@@ -180,9 +208,12 @@ const completePerc = setInterval(() => {
   }
 }, 50);
 
-// SV Toggle - Needs toggle back to normal
+// SV Toggle
 svToggle.addEventListener('click', () => {
   if (!svState) {
+    footerText1.style.display = 'none';
+    footerText2.style.display = 'block';
+
     hps1.style.display = 'none';
     hps2.style.display = 'none';
     hps3.style.display = 'none';
@@ -191,6 +222,10 @@ svToggle.addEventListener('click', () => {
 
     let hpsOp = 0.0;
     hps5.style.opacity = hpsOp;
+
+    navID.style.background = "#b30000";
+    footerID.style.background = "#b30000";
+    nameBox2ID.style.background = "#b30000";
 
     const svFadeIn = setInterval(() => {
       if (hpsOp < 1) {
@@ -203,6 +238,30 @@ svToggle.addEventListener('click', () => {
 
     svState = true;
   } else {
+    footerText1.style.display = 'block';
+    footerText2.style.display = 'none';
+
+    hps5.style.display = 'none';
+    hps6.style.display = 'none';
+    hps7.style.display = 'none';
+    hps8.style.display = 'none';
+    hps1.style.display = 'block';
+
+    let hpsOp = 0.0;
+    hps1.style.opacity = hpsOp;
+
+    navID.style.background = "#000";
+    footerID.style.background = "#000";
+    nameBox2ID.style.background = "#000";
+
+    const svFadeIn = setInterval(() => {
+      if (hpsOp < 1) {
+        hpsOp = hpsOp + .01;
+        hps1.style.opacity = hpsOp;
+      } else {
+        clearInterval(svFadeIn);
+      }
+    }, 10);
 
     svState = false;
   }

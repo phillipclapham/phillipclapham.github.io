@@ -356,6 +356,14 @@ footer p {
   text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
 }
 
+#footerText1 {
+  display: block;
+}
+
+#footerText2 {
+  display: none;
+}
+
 /* Mobile Styles */
 
 @media screen and (max-width: 650px) {
