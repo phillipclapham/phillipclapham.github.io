@@ -254,7 +254,7 @@ footer {
 
 footer p {
   margin: 0 10px;
-  text-shadow: 1px 1px 3px rgba(255,255,255,0.3);
+  text-shadow: 1px 1px 5px rgba(255,255,255,0.3);
 }
 
 .resumeText {
@@ -269,8 +269,26 @@ footer p {
 }
 
 .resumeText h3 {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
   font-size: 1.5rem;
   text-decoration: underline;
+}
+
+.resumeText p {
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.resumeText a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #f00;
+}
+
+.resumeText a:hover {
+  color: #000;
+  font-weight: 900;
 }
 
 .homeB {
@@ -283,6 +301,7 @@ footer p {
   padding: 5px 10px;
   border-radius: 20px;
   user-select: none;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
 
 .homeB:hover {
@@ -297,6 +316,15 @@ footer p {
 
 .resumeList li {
   margin: 10px 0 10px;
+  line-height: 1.4;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.sv {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  font-size: .75rem;
 }
 
 /* Mobile Styles */
@@ -338,6 +366,14 @@ footer p {
 
   .resumeText h3 {
     font-size: 1.25rem;
+  }
+
+  .resumeText p {
+    font-size: 1rem;
+  }
+
+  .resumeText a {
+    font-size: 1rem;
   }
 
   .resumeList {
