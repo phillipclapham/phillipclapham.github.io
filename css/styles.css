@@ -348,7 +348,7 @@ footer p {
   position: absolute;
   bottom: 1%;
   right: 1%;
-  font-size: .95rem;
+  font-size: 1rem;
 }
 
 .sv:hover {
@@ -407,7 +407,7 @@ footer p {
     font-size: 1rem;
   }
   .sv {
-    font-size: .8rem;
+    font-size: 1rem;
   }
 }
 

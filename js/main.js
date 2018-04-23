@@ -1,5 +1,6 @@
 // Initialize page
 let svState = false;
+let svRan = false;
 const navULID = document.getElementById('navULID');
 const hps1 = document.getElementById('hps1');
 const hps2 = document.getElementById('hps2');
@@ -209,6 +210,10 @@ const completePerc = setInterval(() => {
 }, 50);
 
 // SV Toggle
+function svScan() {
+  // Next up
+}
+
 svToggle.addEventListener('click', () => {
   if (!svState) {
     footerText1.style.display = 'none';
@@ -235,6 +240,11 @@ svToggle.addEventListener('click', () => {
         clearInterval(svFadeIn);
       }
     }, 10);
+
+    if (!svRan) {
+      svScan();
+      svRan = true;
+    }
 
     svState = true;
   } else {
