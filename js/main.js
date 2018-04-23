@@ -1,27 +1,51 @@
+// To-Do:
+// Toggle back to normal, fill out SV content and add red coloring, remaining buttons need SV state ifs,
+// Change footer text in sv mode
+
 // Initialize page
+let svState = false;
 const navULID = document.getElementById('navULID');
 const hps1 = document.getElementById('hps1');
 const hps2 = document.getElementById('hps2');
 const hps3 = document.getElementById('hps3');
 const hps4 = document.getElementById('hps4');
+const hps5 = document.getElementById('hps5');
+const hps6 = document.getElementById('hps6');
+const hps7 = document.getElementById('hps7');
+const hps8 = document.getElementById('hps8');
 const homeBArr = document.querySelectorAll('.homeB');
+const svToggle = document.getElementById('svToggle');
 
 // Nav Event Listener
 function homePageShift(e) {
   if (e.target.id === 'navProfileID') {
+    if (!svState) {
+      hps2.style.display = 'block';
+      let hps2Op = 0;
+      hps2.style.opacity = hps2Op;
 
-    hps2.style.display = 'block';
-    let hps2Op = 0;
-    hps2.style.opacity = hps2Op;
+      const hpFadeIn = setInterval(() => {
+        if (hps2Op < 1) {
+          hps2Op = hps2Op + .01;
+          hps2.style.opacity = hps2Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    } else {
+      hps6.style.display = 'block';
+      let hps6Op = 0;
+      hps6.style.opacity = hps6Op;
 
-    const hpFadeIn = setInterval(() => {
-      if (hps2Op < 1) {
-        hps2Op = hps2Op + .01;
-        hps2.style.opacity = hps2Op;
-      } else {
-        clearInterval(hpFadeIn);
-      }
-    }, 10);
+      const hpFadeIn = setInterval(() => {
+        if (hps6Op < 1) {
+          hps6Op = hps6Op + .01;
+          hps6.style.opacity = hps6Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    }
   }
 
   if (e.target.id === 'navExpID') {
@@ -63,6 +87,10 @@ navULID.addEventListener('click', (e) => {
     hps2.style.display = 'none';
     hps3.style.display = 'none';
     hps4.style.display = 'none';
+    hps5.style.display = 'none';
+    hps6.style.display = 'none';
+    hps7.style.display = 'none';
+    hps8.style.display = 'none';
     homePageShift(e);
   }
   e.stopPropagation();
@@ -70,23 +98,43 @@ navULID.addEventListener('click', (e) => {
 
 // Home Buttom Class Event Listeners
 for (let i of homeBArr) {
-  i.addEventListener('click', (e) => {
+  i.addEventListener('click', () => {
+    hps1.style.display = 'none';
     hps2.style.display = 'none';
     hps3.style.display = 'none';
     hps4.style.display = 'none';
+    hps5.style.display = 'none';
+    hps6.style.display = 'none';
+    hps7.style.display = 'none';
+    hps8.style.display = 'none';
 
-    let hps1Op = 0;
-    hps1.style.opacity = hps1Op;
-    hps1.style.display = 'block';
+    if (!svState) {
+      let hps1Op = 0;
+      hps1.style.opacity = hps1Op;
+      hps1.style.display = 'block';
 
-    const hpFadeIn = setInterval(() => {
-      if (hps1Op < 1) {
-        hps1Op = hps1Op + .01;
-        hps1.style.opacity = hps1Op;
-      } else {
-        clearInterval(hpFadeIn);
-      }
-    }, 10);
+      const hpFadeIn = setInterval(() => {
+        if (hps1Op < 1) {
+          hps1Op = hps1Op + .01;
+          hps1.style.opacity = hps1Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    } else {
+      let hps5Op = 0;
+      hps5.style.opacity = hps5Op;
+      hps5.style.display = 'block';
+
+      const hpFadeIn = setInterval(() => {
+        if (hps5Op < 1) {
+          hps5Op = hps5Op + .01;
+          hps5.style.opacity = hps5Op;
+        } else {
+          clearInterval(hpFadeIn);
+        }
+      }, 10);
+    }
   });
 }
 
@@ -105,7 +153,7 @@ function scanComplete() {
       clearInterval(moveUp);
     }
   }, 10);
-  
+
   scanText1ID.style.animation = 'none';
   scanText2ID.style.animation = 'none';
   scanningID.innerHTML = `<p class="scanText1 scanResult1" id="scanText1ID">SCAN COMPLETE</p>
@@ -131,3 +179,31 @@ const completePerc = setInterval(() => {
     clearInterval(completePerc);
   }
 }, 50);
+
+// SV Toggle - Needs toggle back to normal
+svToggle.addEventListener('click', () => {
+  if (!svState) {
+    hps1.style.display = 'none';
+    hps2.style.display = 'none';
+    hps3.style.display = 'none';
+    hps4.style.display = 'none';
+    hps5.style.display = 'block';
+
+    let hpsOp = 0.0;
+    hps5.style.opacity = hpsOp;
+
+    const svFadeIn = setInterval(() => {
+      if (hpsOp < 1) {
+        hpsOp = hpsOp + .01;
+        hps5.style.opacity = hpsOp;
+      } else {
+        clearInterval(svFadeIn);
+      }
+    }, 10);
+
+    svState = true;
+  } else {
+
+    svState = false;
+  }
+});

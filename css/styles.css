@@ -1,23 +1,43 @@
 @keyframes scroll {
-  from { left: -10%; }
-  to { left: 110%; }
+  from {
+    left: -10%;
+  }
+  to {
+    left: 110%;
+  }
 }
 
 @keyframes barBlink {
-  0% { opacity: 0.2; }
-  50% { opacity: 0; }
-  100% { opacity: 0.1; }
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
 @keyframes blink {
-  0% { opacity: 1.0; }
-  50% { opacity: 0; }
-  100% { opacity: 1.0; }
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1.0;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1 }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1
+  }
 }
 
 * {
@@ -115,7 +135,13 @@ body {
   opacity: 1;
 }
 
-#hps2, #hps3, #hps4 {
+#hps2,
+#hps3,
+#hps4,
+#hps5,
+#hps6,
+#hps7,
+#hps8 {
   display: none;
   opacity: 0;
 }
@@ -141,16 +167,17 @@ nav ul li {
   color: #000;
   border-radius: 15px;
   user-select: none;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav ul li:hover {
   background: #000;
   color: #fff;
-  box-shadow: 2px 2px 5px rgba(255,0,0,0.7), -2px -2px 5px rgba(255,0,0,0.7);
+  box-shadow: 2px 2px 5px rgba(255, 0, 0, 0.7), -2px -2px 5px rgba(255, 0, 0, 0.7);
 }
 
-.navRow, .footRow {
+.navRow,
+.footRow {
   height: 10%;
 }
 
@@ -167,10 +194,7 @@ section p {
   margin: 0;
   font-size: 2.5rem;
   font-weight: 900;
-  text-shadow: 0px 0px 1px rgba(255,255,255,0.5),
-               0px 0px 1px rgba(255,255,255,0.5),
-               0px 0px 1px rgba(255,255,255,0.5),
-               0px 0px 1px rgba(255,255,255,0.5);
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 0px 1px rgba(255, 255, 255, 0.5);
 }
 
 .nameBox {
@@ -254,7 +278,7 @@ footer {
 
 footer p {
   margin: 0 10px;
-  text-shadow: 1px 1px 5px rgba(255,255,255,0.3);
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
 }
 
 .resumeText {
@@ -269,13 +293,13 @@ footer p {
 }
 
 .resumeText h3 {
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   font-size: 1.5rem;
   text-decoration: underline;
 }
 
 .resumeText p {
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   font-weight: 300;
   font-size: 1.5rem;
 }
@@ -301,11 +325,11 @@ footer p {
   padding: 5px 10px;
   border-radius: 20px;
   user-select: none;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .homeB:hover {
-  box-shadow: 2px 2px 5px rgba(255,0,0,0.7), -2px -2px 5px rgba(255,0,0,0.7);
+  box-shadow: 2px 2px 5px rgba(255, 0, 0, 0.7), -2px -2px 5px rgba(255, 0, 0, 0.7);
 }
 
 .resumeList {
@@ -317,80 +341,76 @@ footer p {
 .resumeList li {
   margin: 10px 0 10px;
   line-height: 1.4;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .sv {
   position: absolute;
   bottom: 1%;
   right: 1%;
-  font-size: .75rem;
+  font-size: .95rem;
+}
+
+.sv:hover {
+  color: #000;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
 }
 
 /* Mobile Styles */
+
 @media screen and (max-width: 650px) {
   nav {
     font-size: 1rem;
   }
-
   nav ul li {
     margin: 0px;
   }
-
   section p {
     font-size: 2rem;
   }
-
   .scanText1 {
     font-size: 1.25rem;
   }
-  
   .scanText2 {
     font-size: 1rem;
   }
-
   .scanResult2 {
     font-size: 1rem;
   }
-
   footer {
     font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 420px) {
-
   section p {
     font-size: 1.5rem;
   }
-
   .resumeText h3 {
     font-size: 1.25rem;
   }
-
   .resumeText p {
     font-size: 1rem;
   }
-
   .resumeText a {
     font-size: 1rem;
   }
-
   .resumeList {
     font-size: 1rem;
   }
-
+  .sv {
+    font-size: .8rem;
+  }
 }
 
 @media screen and (max-width: 350px) {
-
   section p {
     font-size: 1rem;
   }
-
 }
 
 /* Non compatible viewport size fix */
+
 @media screen and (max-device-height: 550px) {
   html,
   body,
