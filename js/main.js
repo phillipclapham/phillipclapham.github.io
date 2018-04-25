@@ -15,11 +15,18 @@ const svToggle = document.getElementById('svToggle');
 const navID = document.getElementById('navID');
 const footerID = document.getElementById('footerID');
 const scanningID = document.getElementById('scanningID');
+const scanningID2 = document.getElementById('scanningID2');
 const scanText1ID = document.getElementById('scanText1ID');
 const scanText2ID = document.getElementById('scanText2ID');
+const scanText3ID = document.getElementById('scanText3ID');
+const scanText4ID = document.getElementById('scanText4ID');
+const scanText5ID = document.getElementById('scanText5ID');
+const scanText6ID = document.getElementById('scanText6ID');
 const scanSpan = document.getElementById('scanSpan');
+const scanSpan2 = document.getElementById('scanSpan2');
 const nameBoxID = document.getElementById('nameBoxID');
 const crossBarID = document.getElementById('crossBarID');
+const crossBarID2 = document.getElementById('crossBarID2');
 const nameBox2ID = document.getElementById('nameBox2ID');
 const footerText1 = document.getElementById('footerText1');
 const footerText2 = document.getElementById('footerText2');
@@ -192,6 +199,7 @@ function scanComplete() {
 
   scanText1ID.style.animation = 'none';
   scanText2ID.style.animation = 'none';
+  scanText3ID.style.animation = 'none';
   scanningID.innerHTML = `<p class="scanText1 scanResult1" id="scanText1ID">SCAN COMPLETE</p>
   <p class="scanText2 scanResult2" id="scanText2ID">RESULTS:<br>Current user is awesome.</p>
   <p class="scanText2 scanResult2" id="scanText3ID">RECOMMENDATIONS:<br>Click the links above to find out more about me and check out my work.</p>`;
@@ -211,7 +219,40 @@ const completePerc = setInterval(() => {
 
 // SV Toggle
 function svScan() {
-  // Next up
+  function scanComplete2() {
+    let xPos = 50;
+    nameBox2ID.style.top = `${xPos}%`;
+    crossBarID2.style.top = `${xPos}%`;
+  
+    const moveUp = setInterval(() => {
+      if (xPos > 26) {
+        xPos--;
+        nameBox2ID.style.top = `${xPos}%`;
+        crossBarID2.style.top = `${xPos}%`;
+      } else {
+        clearInterval(moveUp);
+      }
+    }, 10);
+  
+    scanText4ID.style.animation = 'none';
+    scanText5ID.style.animation = 'none';
+    scanText6ID.style.animation = 'none';
+    scanningID2.innerHTML = `<p class="scanText1 scanResult1" id="scanText1ID">SCAN COMPLETE</p>
+    <p class="scanText2 scanResult2" id="scanText2ID">RESULTS:<br>Current user is awesomely evil. You need to hire a supervillian to assist you in your dastardly plans.</p>
+    <p class="scanText2 scanResult2" id="scanText3ID">RECOMMENDATIONS:<br>Click the links above to find out more about me and check out my work.</p>`;
+  }
+  
+  let ssNum = 0;
+  
+  const completePerc = setInterval(() => {
+    if (ssNum < 100) {
+      ssNum++;
+      scanSpan2.innerText = ssNum;
+    } else {
+      scanComplete2();
+      clearInterval(completePerc);
+    }
+  }, 50);
 }
 
 svToggle.addEventListener('click', () => {
@@ -231,6 +272,9 @@ svToggle.addEventListener('click', () => {
     navID.style.background = "#b30000";
     footerID.style.background = "#b30000";
     nameBox2ID.style.background = "#b30000";
+    scanningID2.style.background = '#fff';
+    scanningID2.style.color = '#b30000';
+    scanningID2.style.border = 'none';
 
     const svFadeIn = setInterval(() => {
       if (hpsOp < 1) {
