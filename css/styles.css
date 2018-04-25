@@ -411,9 +411,30 @@ footer p {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 360px) {
   section p {
+    font-size: 1.25rem;
+  }
+  .resumeText h3 {
     font-size: 1rem;
+  }
+  .resumeText p {
+    font-size: .8rem;
+  }
+  .resumeText a {
+    font-size: .8rem;
+  }
+  .resumeList {
+    font-size: .8rem;
+  }
+  .scanText1 {
+    font-size: 1.1rem;
+  }
+  .scanText2 {
+    font-size: .9rem;
+  }
+  .scanResult2 {
+    font-size: .9rem;
   }
 }
 
